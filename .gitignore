@@ -128,3 +128,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+.DS_Store
+node_modules
+.now
+/public/feed.xml
+dist/
+packages/
+yalc.lock
+.yalc

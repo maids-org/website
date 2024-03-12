@@ -1,0 +1,7 @@
+<svg width="36" height="36" viewBox="0 0 3000 3000" fill="none" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <path
+    d="M1674,2022 L1674,2370 L630,2370 L630,2022 L1674,2022 Z M2370,1326 L2370,2370 L2022,2370 L2022,1326 L2370,1326 Z M978,630 L978,1674 L630,1674 L630,630 L978,630 Z M2370,630 L2370,978 L1326,978 L1326,630 L2370,630 Z"
+    fill="#000000"
+    transform="translate(1500, 1500) rotate(45) translate(-1500, -1500)" />
+</svg>
