@@ -14,4 +14,6 @@ const Button = forwardRef(({ onClick, children, disabled }, ref) => {
   )
 })
 
+Button.displayName = 'Button';
+
 export default Button
