@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://maid.uz
+
+# Sitemaps
+Sitemap: https://maid.uz/sitemap.xml

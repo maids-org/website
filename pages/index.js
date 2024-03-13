@@ -10,7 +10,7 @@ const About = () => {
         <p>
           Started as a group of developers which later became a network for
           communities & teams consisting tech enthusiasts. We govern{' '}
-          <Link underline href="/community">
+          <Link underline href="/">
             many communities & teams
           </Link>{' '}
           in Uzbek IT segment.

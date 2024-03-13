@@ -3,9 +3,10 @@ import Entry from '@components/entry/text'
 
 // Data
 import useData from '@lib/use-data'
-import { data } from '@data/reading.json'
+import { join } from 'path'
+import { promises } from 'fs'
 
-const Reading = () => {
+const Reading = ({ data }) => {
   const { items } = useData(data)
 
   return (
@@ -32,6 +33,17 @@ const Reading = () => {
       </article>
     </Page>
   )
+}
+
+export const getStaticProps = async () => {
+  const file = await promises.readFile(join('./data', 'reading.json'), {
+    encoding: 'utf8'
+  })
+  const parsed = JSON.parse(file)
+
+  return {
+    props: { data: parsed.data }
+  }
 }
 
 export default Reading

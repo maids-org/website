@@ -3,9 +3,10 @@ import Entry from '@components/entry'
 import TextEntry from '@components/entry/text'
 
 // Data
-import { data } from '@data/design.json'
+import { promises } from 'fs'
+import { join } from 'path'
 
-const Design = () => {
+const Design = ({ data }) => {
   const imageItems = data.filter(x => x.image)
   const nonImageItems = data.filter(x => !x.image)
 
@@ -43,6 +44,17 @@ const Design = () => {
       </article>
     </Page>
   )
+}
+
+export const getStaticProps = async () => {
+  const file = await promises.readFile(join('./data', 'design.json'), {
+    encoding: 'utf8'
+  })
+  const parsed = JSON.parse(file)
+
+  return {
+    props: { data: parsed.data }
+  }
 }
 
 export default Design

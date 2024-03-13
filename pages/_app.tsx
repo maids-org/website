@@ -24,6 +24,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
+      /* @ts-ignore */
       <ThemeProvider disableTransitionOnChange defaultTheme="dark">
         <Component {...pageProps} />
       </ThemeProvider>

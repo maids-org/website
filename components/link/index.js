@@ -50,7 +50,7 @@ const Link = ({
         className={c}
         {...props}
       >
-        {passHref ? children : { children }}
+        {children}
       </NextLink>
     </>
   )
