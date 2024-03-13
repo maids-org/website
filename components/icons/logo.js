@@ -6,6 +6,7 @@ const Logo = () => {
         transform="translate(1500, 1500) rotate(45) translate(-1500, -1500)"
       />
     </svg>
+
   )
 }
 

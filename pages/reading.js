@@ -1,10 +1,8 @@
-import Page from '@components/page'
-import Entry from '@components/entry/text'
-
-// Data
-import useData from '@lib/use-data'
 import { join } from 'path'
 import { promises } from 'fs'
+import useData from '@lib/use-data'
+import Page from '@components/page'
+import Entry from '@components/entry/text'
 
 const Reading = ({ data }) => {
   const { items } = useData(data)
@@ -16,7 +14,7 @@ const Reading = ({ data }) => {
     >
       <article>
         <ul>
-          {items.map(entry => {
+          {items.map((entry) => {
             return (
               <Entry
                 key={entry.title}
@@ -37,12 +35,12 @@ const Reading = ({ data }) => {
 
 export const getStaticProps = async () => {
   const file = await promises.readFile(join('./data', 'reading.json'), {
-    encoding: 'utf8'
+    encoding: 'utf8',
   })
   const parsed = JSON.parse(file)
 
   return {
-    props: { data: parsed.data }
+    props: { data: parsed.data },
   }
 }
 

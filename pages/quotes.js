@@ -1,6 +1,5 @@
 import Page from '@components/page'
 import getMarkdown from '@lib/get-markdown'
-import Link from '@components/link' // eslint-disable-line
 
 const Quotes = ({ html }) => {
   return (
@@ -18,8 +17,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      html: md
-    }
+      html: md,
+    },
   }
 }
 

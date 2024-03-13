@@ -1,7 +1,7 @@
 import Page from '@components/page'
 import Link from '@components/link'
 
-const About = () => {
+const Index = ({ domain }) => {
   return (
     <Page description="Hello there, we are Maids. Started as a group of developers which later became a network for communities consisting tech enthusiasts.">
       <article>
@@ -29,4 +29,12 @@ const About = () => {
   )
 }
 
-export default About
+export const getServerSideProps = async ({ req }) => {
+  return {
+    props: {
+      domain: req.headers.host,
+    },
+  }
+}
+
+export default Index

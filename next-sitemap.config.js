@@ -11,9 +11,9 @@ const config = {
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-      alternateRefs: config.alternateRefs ?? []
+      alternateRefs: config.alternateRefs ?? [],
     }
-  }
+  },
 }
 
 module.exports = config

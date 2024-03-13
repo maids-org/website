@@ -1,19 +1,15 @@
 import NextHead from 'next/head'
 import { useTheme } from 'next-themes'
-import { useRouter } from 'next/router'
 
-const BASE_URL = `https://maid.uz`
-const defaultOgImage = 'https://maid.uz/og.png'
-const useCurrentPath = () => useRouter().asPath.split('?')[0]
+const defaultOgImage = 'https://orzklv.uz/og.png'
 
 const Head = ({
-  title = 'Maids. (ex Mad Maids)',
-  description = 'Hello there, we are Maids. Started as a group of developers which later became a network for communities consisting tech enthusiasts.',
+  title = 'Maids.',
+  description = "Hello there, we are Maids. Started as a group of developers which later became a network for communities consisting tech enthusiasts.",
   image = defaultOgImage,
-  children
+  children,
 }) => {
   const { systemTheme } = useTheme()
-  const path = useCurrentPath()
 
   return (
     <NextHead>
@@ -40,21 +36,20 @@ const Head = ({
 
       {/* URL */}
       <meta name="og:url" content="https://maid.uz" />
-      <link key="canonical" rel="canonical" href={BASE_URL + path} />
 
       {/* General */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@maidsorg" />
-      <meta name="apple-mobile-web-app-title" content="Maids" />
-      <meta name="author" content="Maids Team" />
+      <meta name="twitter:site" content="@madmaids" />
+      <meta name="apple-mobile-web-app-title" content="Maid's Website" />
+      <meta name="author" content="Team Maids" />
 
       {/* RSS feed */}
       <link
         rel="alternate"
         type="application/rss+xml"
-        title="RSS Feed for maid.uz"
+        title="RSS Feed for orzklv.uz"
         href="/feed.xml"
       />
 

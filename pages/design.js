@@ -1,14 +1,12 @@
+import { join } from 'path'
+import { promises } from 'fs'
 import Page from '@components/page'
 import Entry from '@components/entry'
 import TextEntry from '@components/entry/text'
 
-// Data
-import { promises } from 'fs'
-import { join } from 'path'
-
 const Design = ({ data }) => {
-  const imageItems = data.filter(x => x.image)
-  const nonImageItems = data.filter(x => !x.image)
+  const imageItems = data.filter((x) => x.image)
+  const nonImageItems = data.filter((x) => !x.image)
 
   return (
     <Page
@@ -16,7 +14,7 @@ const Design = ({ data }) => {
       description="Collection of beautiful websites and portfolios that I admire."
     >
       <article>
-        {imageItems.map(entry => {
+        {imageItems.map((entry) => {
           return (
             <Entry
               key={`${entry.title}-${entry.url}`}
@@ -29,7 +27,7 @@ const Design = ({ data }) => {
           )
         })}
 
-        {nonImageItems.map(entry => {
+        {nonImageItems.map((entry) => {
           return (
             <TextEntry
               key={`${entry.title}-${entry.url}`}
@@ -48,12 +46,12 @@ const Design = ({ data }) => {
 
 export const getStaticProps = async () => {
   const file = await promises.readFile(join('./data', 'design.json'), {
-    encoding: 'utf8'
+    encoding: 'utf8',
   })
   const parsed = JSON.parse(file)
 
   return {
-    props: { data: parsed.data }
+    props: { data: parsed.data },
   }
 }
 

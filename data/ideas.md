@@ -1,27 +1,37 @@
 ### Code
 
-- [x] MDX implementation using marked, custom HTML tags, and \[data\] attributes
-- [x] styled-system HOC for use with styled-jsx
-- [x] Writing app that turns off the screen
-- [x] Update homepage to use SSG
-- [ ] GUI for plain JSON databases using lowdb (`dead` - Dead Easy Array Databases)
-- [ ] spotlight-like password manager with good keybinds
-- [ ] Music gathering site, combines all other services to centralize a playlist (http://song.link/)
-- [ ] Storytelling using Command+F to jump between occurences
-- [ ] Deploy DB as a static file and use ISSG
-- [ ] Client side OG image generator
-- [ ] Authenticator app that uses a QR code to transfer from old phone to new phone
-- [ ] Social media sharer
+- [ ] Stabilize all APIs of Xinux
+- [ ] Create server edition of Xinux
+- [ ] Release workstation version of Xinux with GNOME
+- [ ] Release public version of Korrektor API
+- [ ] Release desktop application for Korrektor on Qt & Tauri
+- [ ] Connect Havo with Osmon and make it single binary
+- [ ] Rewrite Garbage Collector of Bulut
 
 ### Blog
 
-- [ ] The scroll position effect on /blog
-- [ ] Introduction to mechanical keyboards
 - [x] Write it down
-- [ ] Improved Structure Procrastination
-- [x] Thoughts on gaming
-- [ ] Instrinsic value and pursuit of popularity
-- [ ] A decent popover
-- [ ] Ghost Mouse
-- [ ] Temporal Navigation
-- [ ] A taste of Mercury
+- [x] Start writing important articles on website
+- [x] Turn telegram channel into Twitter shitpost
+- [ ] Write predictions for 2023 on website blog
+- [ ] Write useful libraries & frameworks to learn
+
+### Commercial
+
+- [ ] Work on Mad Maid's structure
+- [ ] Bootstrap \~secret\~ project
+- [ ] Create obfuscation for microservices
+
+### Done (Long Past)
+
+- [x] Optimize the bulut to be compliant with any architecture x86_64
+- [x] Write osmon and cli with debugger
+- [x] Add ARM and ARM64 support for bulut
+
+### Dropped
+
+- ~~Create a platform for FinClub of WIUT~~
+- ~~Start porting blogs from Telegram channel~~
+- ~~Port all posts from telegram to website~~
+- ~~Deploy cloud bulut with SDK~~
+- ~~Release the first stable version of osmon~~

@@ -4,8 +4,12 @@ import cn from 'classnames'
 
 import styles from './link.module.css'
 
-const canPrefetch = href => {
-  return !(!href || !href.startsWith('/'))
+const canPrefetch = (href) => {
+  if (!href || !href.startsWith('/')) {
+    return false
+  }
+
+  return true
 }
 
 const Link = ({
@@ -23,12 +27,12 @@ const Link = ({
 }) => {
   const c = cn(className, styles.reset, {
     [styles.gray]: gray,
-    [styles.underline]: underline
+    [styles.underline]: underline,
   })
 
   if (external) {
     return (
-      <NextLink
+      <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -36,7 +40,7 @@ const Link = ({
         {...props}
       >
         {children}
-      </NextLink>
+      </a>
     )
   }
 

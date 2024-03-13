@@ -11,7 +11,7 @@ import {
   CommandList,
   useCommand,
   usePages,
-  CommandGroup
+  CommandGroup,
 } from 'cmdk'
 
 import {
@@ -27,17 +27,20 @@ import {
   Document,
   Quote,
   Words,
-  Lightbulb,
+  LightBulb,
   ArrowRight,
   GitHub,
+  Telegram,
+  Mail,
   Twitter,
-  Telegram
+  Play,
 } from '@components/icons'
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
 import { useTheme } from 'next-themes'
 import tinykeys from '@lib/tinykeys'
 import postMeta from '@data/blog.json'
+import Pin from '@components/icons/pin'
 
 const CommandData = React.createContext({})
 const useCommandData = () => React.useContext(CommandData)
@@ -47,7 +50,7 @@ const CommandMenu = memo(() => {
   const commandRef = useRef()
   const router = useRouter()
   const commandProps = useCommand({
-    label: 'Site Navigation'
+    label: 'Site Navigation',
   })
   const [pages, setPages] = usePages(commandProps, ThemeItems)
   const [open, setOpen] = useState(false)
@@ -55,10 +58,10 @@ const CommandMenu = memo(() => {
 
   const { mounted, rendered } = useDelayedRender(open, {
     enterDelay: -1,
-    exitDelay: 200
+    exitDelay: 200,
   })
 
-  // Can't do this inside of useCommand because it relies on useDelayedRender
+  // Can't do this inside useCommand because it relies on useDelayedRender
   useEffect(() => {
     if (!mounted) {
       setPages([DefaultItems])
@@ -87,8 +90,10 @@ const CommandMenu = memo(() => {
       'g q': () => router.push('/quotes'),
       'g w': () => router.push('/words'),
       'g i': () => router.push('/ideas'),
+      'g y': () => router.push('/minecraft'),
+      'g z': () => router.push('/sponsors'),
       // Social
-      'g t': () => () => window.open('https://t.me/madmaids', '_blank')
+      'g /': () => () => window.open('https://t.me/orzklvb', '_blank'),
     }
   }, [router, setPages])
 
@@ -96,10 +101,11 @@ const CommandMenu = memo(() => {
   useEffect(() => {
     const unsubs = [
       tinykeys(window, keymap, { ignoreFocus: true }),
-      tinykeys(window, { '$mod+k': () => setOpen(o => !o) })
+      tinykeys(window, { '$mod+k': () => setOpen((o) => !o) }),
+      tinykeys(window, { 'Alt+k': () => setOpen((o) => !o) }),
     ]
     return () => {
-      unsubs.forEach(unsub => unsub())
+      unsubs.forEach((unsub) => unsub())
     }
   }, [keymap])
 
@@ -138,7 +144,7 @@ const CommandMenu = memo(() => {
       <DialogOverlay
         isOpen={mounted}
         className={cn(styles.screen, {
-          [styles.show]: rendered
+          [styles.show]: rendered,
         })}
         onDismiss={() => setOpen(false)}
       >
@@ -150,7 +156,7 @@ const CommandMenu = memo(() => {
             {...commandProps}
             ref={commandRef}
             className={cn(styles.command, {
-              [styles.show]: rendered
+              [styles.show]: rendered,
             })}
           >
             <div className={styles.top}>
@@ -168,7 +174,7 @@ const CommandMenu = memo(() => {
             <div
               ref={heightRef}
               className={cn(styles.container, {
-                [styles.empty]: list.current.length === 0
+                [styles.empty]: list.current.length === 0,
               })}
             >
               <CommandList ref={listRef}>
@@ -193,7 +199,7 @@ const ThemeItems = () => {
   const { theme: activeTheme, themes, setTheme } = useTheme()
   const { setOpen } = useCommandData()
 
-  return themes.map(theme => {
+  return themes.map((theme) => {
     if (theme === activeTheme) return null
     return (
       <Item
@@ -246,12 +252,14 @@ const DefaultItems = () => {
 
   return (
     <>
-      <Item
-        value="Themes"
-        icon={<Sparkles />}
-        keybind="t"
-        closeOnCallback={false}
-      />
+      <Group title="Look & Feel">
+        <Item
+          value="Themes"
+          icon={<Sparkles />}
+          keybind="t"
+          closeOnCallback={false}
+        />
+      </Group>
       <Group title="Blog">
         <Item value="Blog" icon={<Pencil />} keybind="g b" />
         <Item
@@ -275,7 +283,9 @@ const DefaultItems = () => {
         <Item value="Projects" icon={<Document />} keybind="g p" />
         <Item value="Quotes" icon={<Quote />} keybind="g q" />
         <Item value="Words" icon={<Words />} keybind="g w" />
-        <Item value="Ideas" icon={<Lightbulb />} keybind="g i" />
+        <Item value="Ideas" icon={<LightBulb />} keybind="g i" />
+        <Item value="Minecraft" icon={<Play />} keybind="g y" />
+        <Item value="Sponsors" icon={<Mail />} keybind="g z" />
       </Group>
 
       <Group title="Navigation">
@@ -287,13 +297,19 @@ const DefaultItems = () => {
         <Item
           value="GitHub"
           icon={<GitHub />}
-          callback={() => window.open('https://github.com/maids-org', '_blank')}
+          callback={() => window.open('https://github.com/orzklv', '_blank')}
+        />
+        <Item
+          value="Twitter"
+          icon={<Twitter />}
+          keybind="g /"
+          callback={() => window.open('https://twitter.com/orzklv', '_blank')}
         />
         <Item
           value="Telegram"
           icon={<Telegram />}
-          keybind="g t"
-          callback={() => window.open('https://t.me/madmaids', '_blank')}
+          keybind="g \"
+          callback={() => window.open('https://t.me/orzklvb', '_blank')}
         />
       </Group>
     </>
