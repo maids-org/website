@@ -165,7 +165,6 @@ export default function keybindings(
       }
     }
 
-
     keyBindings.forEach(keyBinding => {
       let sequence = keyBinding[0]
       let callback = keyBinding[1]

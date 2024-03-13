@@ -26,7 +26,7 @@ Packages in `node_modules` that define an executable will have that executable a
 }
 ```
 
-Running `yarn lint` will work correctly. However, just running `eslint .` from the command line will fail!<sup>1</sup> This was extremely confusing at first, did I have  ESLint installed or not?
+Running `yarn lint` will work correctly. However, just running `eslint .` from the command line will fail!<sup>1</sup> This was extremely confusing at first, did I have ESLint installed or not?
 
 The package script will work because Yarn recognizes that the ESLint dependency includes an executable, and appends it to the environment PATH when running any scripts.
 

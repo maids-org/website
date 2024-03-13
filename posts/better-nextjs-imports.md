@@ -10,7 +10,7 @@ Nine days after first writing this post, the Next.js team [landed support for pa
 ```json
 // tsconfig.json or jsconfig.json
 {
-  compilerOptions: {
+  "compilerOptions": {
     "baseURL": "."
   }
 }
@@ -22,7 +22,7 @@ To use a custom prefix, add a `paths` configuration:
 
 ```json
 {
-  compilerOptions: {
+  "compilerOptions": {
     "baseURL": ".",
     "paths": {
       "@components/*": ["components/*"]
@@ -104,4 +104,5 @@ If you're using a mixed JS/TS codebase, you should include JS files in your `tsc
 ```
 
 Now you can update your import statements to use the new syntax!
+
 </details>

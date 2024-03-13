@@ -90,4 +90,3 @@ $ vercel
 ```
 
 Visit your deployment to see the proxy in action. My Aaron Swartz blog proxy is available here: [aaronsw.now.sh/weblog/archive](https://aaronsw.now.sh/weblog/archive).
-

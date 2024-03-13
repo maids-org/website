@@ -9,7 +9,6 @@ My crappy superpower is solving difficult problems as I'm falling asleep. Doesn'
 
 It's 1:18 AM. I just figured it out. The answer is so simple, I can't believe it took me this long. Do I blind myself opening my phone to write it down? No, I can finally sleep now! There's no way I'll forget.
 
-
 It's 8:32 AM. I can't believe I've done this again.
 
 ---

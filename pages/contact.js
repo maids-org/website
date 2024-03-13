@@ -7,7 +7,10 @@ const Contact = () => {
         <p>Get in touch.</p>
 
         <blockquote>
-          <a href="mailto:support@maid.uz?subject=Hello there!&body=We've Been Trying To Reach You About Your Car's Extended Warranty" className="reset">
+          <a
+            href="mailto:support@maid.uz?subject=Hello there!&body=We've Been Trying To Reach You About Your Car's Extended Warranty"
+            className="reset"
+          >
             support@maid.uz
           </a>
         </blockquote>

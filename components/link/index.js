@@ -5,11 +5,7 @@ import cn from 'classnames'
 import styles from './link.module.css'
 
 const canPrefetch = href => {
-  if (!href || !href.startsWith('/')) {
-    return false
-  }
-
-  return true
+  return !(!href || !href.startsWith('/'))
 }
 
 const Link = ({
@@ -32,7 +28,7 @@ const Link = ({
 
   if (external) {
     return (
-      <a
+      <NextLink
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -40,7 +36,7 @@ const Link = ({
         {...props}
       >
         {children}
-      </a>
+      </NextLink>
     )
   }
 
@@ -51,14 +47,10 @@ const Link = ({
         as={as}
         prefetch={canPrefetch(href) ? undefined : false}
         passHref={passHref}
+        className={c}
+        {...props}
       >
-        {passHref ? (
-          children
-        ) : (
-          <a className={c} {...props}>
-            {children}
-          </a>
-        )}
+        {passHref ? children : { children }}
       </NextLink>
     </>
   )

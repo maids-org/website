@@ -28,9 +28,7 @@ const UsernameInput = () => {
 const DisplayUsername = () => {
   const [username] = useUsername()
 
-  return (
-    <span>Username: {username}</span>
-  )
+  return <span>Username: {username}</span>
 }
 ```
 

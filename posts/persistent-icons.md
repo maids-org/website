@@ -15,7 +15,6 @@ Find the application in Finder and right click to "Show Package Contents".
 
 ![Show Package Contents on Discord.app](https://paco.sh/blog/persistent-icons/show.png)
 
-
 Navigate to `Contents/Resources/`. Here, `electron.icns` is the culprit. Let's replace it with our custom icon.
 
 ![electron.icns in Contents/Resources Folder](https://paco.sh/blog/persistent-icons/icns.png)

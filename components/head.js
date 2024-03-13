@@ -3,13 +3,12 @@ import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 
 const BASE_URL = `https://maid.uz`
-const defaultOgImage =
-  'https://maid.uz/og.png'
-const useCurrentPath = () => useRouter().asPath.split("?")[0];
+const defaultOgImage = 'https://maid.uz/og.png'
+const useCurrentPath = () => useRouter().asPath.split('?')[0]
 
 const Head = ({
   title = 'Maids. (ex Mad Maids)',
-  description = "Hello there, we are Maids. Started as a group of developers which later became a network for communities consisting tech enthusiasts.",
+  description = 'Hello there, we are Maids. Started as a group of developers which later became a network for communities consisting tech enthusiasts.',
   image = defaultOgImage,
   children
 }) => {
@@ -42,7 +41,6 @@ const Head = ({
       {/* URL */}
       <meta name="og:url" content="https://maid.uz" />
       <link key="canonical" rel="canonical" href={BASE_URL + path} />
-
 
       {/* General */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
